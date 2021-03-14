@@ -11,7 +11,7 @@ class TranslateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
     }
 
 

@@ -101,12 +101,10 @@
 		343954FC25FE11B20058A0B3 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
-				343954FD25FE11B20058A0B3 /* AppDelegate.swift */,
-				343954FF25FE11B20058A0B3 /* SceneDelegate.swift */,
+				3439553925FE12770058A0B3 /* Application */,
 				3439550125FE11B20058A0B3 /* TranslateViewController.swift */,
 				3439550325FE11B20058A0B3 /* Main.storyboard */,
 				3439550925FE11B20058A0B3 /* Assets.xcassets */,
-				3439550B25FE11B20058A0B3 /* LaunchScreen.storyboard */,
 				3439550E25FE11B20058A0B3 /* Info.plist */,
 				3439550625FE11B20058A0B3 /* Translator.xcdatamodeld */,
 			);
@@ -129,6 +127,16 @@
 				3439552425FE11B30058A0B3 /* Info.plist */,
 			);
 			path = TranslatorUITests;
+			sourceTree = "<group>";
+		};
+		3439553925FE12770058A0B3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3439550B25FE11B20058A0B3 /* LaunchScreen.storyboard */,
+				343954FF25FE11B20058A0B3 /* SceneDelegate.swift */,
+				343954FD25FE11B20058A0B3 /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
