@@ -16,6 +16,7 @@
 		3439550D25FE11B20058A0B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3439550B25FE11B20058A0B3 /* LaunchScreen.storyboard */; };
 		3439551825FE11B30058A0B3 /* TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439551725FE11B30058A0B3 /* TranslatorTests.swift */; };
 		3439552325FE11B30058A0B3 /* TranslatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439552225FE11B30058A0B3 /* TranslatorUITests.swift */; };
+		34B1956425FF60030015D43B /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B1956325FF60030015D43B /* TranslationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3439551E25FE11B30058A0B3 /* TranslatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3439552225FE11B30058A0B3 /* TranslatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorUITests.swift; sourceTree = "<group>"; };
 		3439552425FE11B30058A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34B1956325FF60030015D43B /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,8 @@
 		343954FC25FE11B20058A0B3 /* Translator */ = {
 			isa = PBXGroup;
 			children = (
+				34B1955E25FF5F8E0015D43B /* Translate */,
 				3439553925FE12770058A0B3 /* Application */,
-				3439550125FE11B20058A0B3 /* TranslateViewController.swift */,
 				3439550325FE11B20058A0B3 /* Main.storyboard */,
 				3439550925FE11B20058A0B3 /* Assets.xcassets */,
 				3439550E25FE11B20058A0B3 /* Info.plist */,
@@ -137,6 +139,47 @@
 				343954FD25FE11B20058A0B3 /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		34B1955E25FF5F8E0015D43B /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				34B1955F25FF5F9D0015D43B /* Views */,
+				34B1956125FF5FAF0015D43B /* Model */,
+				34B1956025FF5FA80015D43B /* Presenter */,
+			);
+			path = Translate;
+			sourceTree = "<group>";
+		};
+		34B1955F25FF5F9D0015D43B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3439550125FE11B20058A0B3 /* TranslateViewController.swift */,
+				34B1956225FF5FD30015D43B /* TableViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34B1956025FF5FA80015D43B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		34B1956125FF5FAF0015D43B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34B1956225FF5FD30015D43B /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				34B1956325FF60030015D43B /* TranslationCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +315,7 @@
 				3439550225FE11B20058A0B3 /* TranslateViewController.swift in Sources */,
 				3439550825FE11B20058A0B3 /* Translator.xcdatamodeld in Sources */,
 				343954FE25FE11B20058A0B3 /* AppDelegate.swift in Sources */,
+				34B1956425FF60030015D43B /* TranslationCell.swift in Sources */,
 				3439550025FE11B20058A0B3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
