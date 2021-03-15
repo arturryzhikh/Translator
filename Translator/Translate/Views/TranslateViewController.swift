@@ -27,8 +27,9 @@ class TranslateViewController: UIViewController {
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
         setupNavigationBar()
+        setupTableView()
+        
         
         
     }
