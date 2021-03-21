@@ -18,6 +18,7 @@
 		3439552325FE11B30058A0B3 /* TranslatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439552225FE11B30058A0B3 /* TranslatorUITests.swift */; };
 		34B1956C25FF625D0015D43B /* TranslatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B1956B25FF625D0015D43B /* TranslatePresenter.swift */; };
 		34D30F65260740EB0014E9EE /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D30F64260740EB0014E9EE /* TranslationCell.swift */; };
+		34D30F6D26076A890014E9EE /* OtherWordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D30F6C26076A890014E9EE /* OtherWordsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3439552425FE11B30058A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B1956B25FF625D0015D43B /* TranslatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatePresenter.swift; sourceTree = "<group>"; };
 		34D30F64260740EB0014E9EE /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
+		34D30F6C26076A890014E9EE /* OtherWordsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherWordsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				3439550125FE11B20058A0B3 /* TranslateViewController.swift */,
 				34D30F64260740EB0014E9EE /* TranslationCell.swift */,
+				34D30F6C26076A890014E9EE /* OtherWordsCell.swift */,
 				34B1956225FF5FD30015D43B /* TableViewReusableViews */,
 			);
 			path = Views;
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3439550225FE11B20058A0B3 /* TranslateViewController.swift in Sources */,
+				34D30F6D26076A890014E9EE /* OtherWordsCell.swift in Sources */,
 				3439550825FE11B20058A0B3 /* Translator.xcdatamodeld in Sources */,
 				343954FE25FE11B20058A0B3 /* AppDelegate.swift in Sources */,
 				34D30F65260740EB0014E9EE /* TranslationCell.swift in Sources */,

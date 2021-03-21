@@ -59,7 +59,7 @@ class TranslateViewController: UIViewController {
     private func setupTableView() {
         tableView.register(TranslationCell.self, forCellReuseIdentifier: TranslationCell.description())
         tableView.delaysContentTouches = false//start hangling touches immidiately
-       
+        tableView.register(OtherWordsCell.self, forCellReuseIdentifier: OtherWordsCell.description())
        
     }
 }
@@ -74,15 +74,24 @@ extension TranslateViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TranslationCell.description(), for: indexPath) as! TranslationCell
-        let contact = contacts[indexPath.section][indexPath.row]
-        cell.searchWordLabel.text = contact
-        cell.translationLabel.text = "translation"
-        cell.delegate = self
-        cell.addButton.tag = indexPath.row
-        print(cell.addButton.tag)
-        cell.meaningImageView.image = #imageLiteral(resourceName: "0-2232_free-download-hd-nature-wallpapers-for-mobile-home")
-        return cell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: TranslationCell.description(), for: indexPath) as! TranslationCell
+      
+            let cell = tableView.dequeueReusableCell(withIdentifier: OtherWordsCell.description(), for: indexPath) as! OtherWordsCell
+            cell.countLabel.text = "90"
+            cell.searchWordLabel.text = "Search Word"
+            cell.translationLabel.text = "translation,translation,translation"
+          
+            return cell
+            
+        
+//        cell.searchWordLabel.text = contact
+//        cell.translationLabel.text = "translation"
+//        cell.delegate = self
+//        cell.backgroundColor = indexPath.row == 0 ? #colorLiteral(red: 0.8751707026, green: 0.8751707026, blue: 0.8751707026, alpha: 1) : .white
+//        cell.addButton.tag = indexPath.row
+//        print(cell.addButton.tag)
+//        cell.meaningImageView.image = #imageLiteral(resourceName: "0-2232_free-download-hd-nature-wallpapers-for-mobile-home")
+//        return cell
     }
     
     
@@ -90,6 +99,9 @@ extension TranslateViewController: UITableViewDataSource {
 //MARK: UITableViewDelegate
 
 extension TranslateViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
@@ -103,8 +115,13 @@ extension TranslateViewController: UITableViewDelegate {
     }
     
 }
+
 //MARK: UISearchResultsUpdating
+
+
 extension TranslateViewController: UISearchResultsUpdating {
+    
+    
     func updateSearchResults(for searchController: UISearchController) {
        
     }

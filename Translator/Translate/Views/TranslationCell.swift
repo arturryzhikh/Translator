@@ -13,6 +13,7 @@ protocol TranslationCellDelegate: class {
 
 class TranslationCell: UITableViewCell {
     
+    
     var meaningImageView: UIImageView!
     var searchWordLabel: UILabel!
     var translationLabel: UILabel!
@@ -33,8 +34,9 @@ class TranslationCell: UITableViewCell {
         
     }
     private func setup() {
+        backgroundColor = #colorLiteral(red: 0.8751707026, green: 0.8751707026, blue: 0.8751707026, alpha: 1)
         self.clipsToBounds = true
-        self.layer.cornerRadius = 6
+        self.layer.cornerRadius = 18
         self.layer.masksToBounds = true
         meaningImageView = UIImageView()
         meaningImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +75,7 @@ class TranslationCell: UITableViewCell {
         addButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.addTarget(self, action: #selector(addButtonTapped(sender:)), for: .touchUpInside)
         
+        
     
         self.contentView.addSubview(addButton)
         
@@ -81,9 +84,26 @@ class TranslationCell: UITableViewCell {
         
     }
     
-    
+    private func replaceAddButtonWithStarLabel() {
+        let label = UILabel()
+        label.text = "★"
+        label.font = UIFont.systemFont(ofSize: 24)
+        label.contentMode = .center
+        label.textColor = .lightGray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(label)
+        label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
+        self.addButton.removeFromSuperview()
+    }
     @objc func addButtonTapped(sender: UIButton) {
         
+        UIView.animate(withDuration: 0.3) {
+            self.addButton.transform = CGAffineTransform(scaleX: 4, y: 4)
+            self.addButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+    }
+        replaceAddButtonWithStarLabel()
+        self.addButton.removeFromSuperview()
         print(#function)
        
     }
