@@ -16,8 +16,8 @@
 		3439550D25FE11B20058A0B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3439550B25FE11B20058A0B3 /* LaunchScreen.storyboard */; };
 		3439551825FE11B30058A0B3 /* TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439551725FE11B30058A0B3 /* TranslatorTests.swift */; };
 		3439552325FE11B30058A0B3 /* TranslatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439552225FE11B30058A0B3 /* TranslatorUITests.swift */; };
-		34B1956425FF60030015D43B /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B1956325FF60030015D43B /* TranslationCell.swift */; };
 		34B1956C25FF625D0015D43B /* TranslatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B1956B25FF625D0015D43B /* TranslatePresenter.swift */; };
+		34D30F65260740EB0014E9EE /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D30F64260740EB0014E9EE /* TranslationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 		3439551E25FE11B30058A0B3 /* TranslatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3439552225FE11B30058A0B3 /* TranslatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorUITests.swift; sourceTree = "<group>"; };
 		3439552425FE11B30058A0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34B1956325FF60030015D43B /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 		34B1956B25FF625D0015D43B /* TranslatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatePresenter.swift; sourceTree = "<group>"; };
+		34D30F64260740EB0014E9EE /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				3439550125FE11B20058A0B3 /* TranslateViewController.swift */,
-				34B1956225FF5FD30015D43B /* TableViewCells */,
+				34D30F64260740EB0014E9EE /* TranslationCell.swift */,
+				34B1956225FF5FD30015D43B /* TableViewReusableViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,12 +178,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		34B1956225FF5FD30015D43B /* TableViewCells */ = {
+		34B1956225FF5FD30015D43B /* TableViewReusableViews */ = {
 			isa = PBXGroup;
 			children = (
-				34B1956325FF60030015D43B /* TranslationCell.swift */,
 			);
-			path = TableViewCells;
+			path = TableViewReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,7 +318,7 @@
 				3439550225FE11B20058A0B3 /* TranslateViewController.swift in Sources */,
 				3439550825FE11B20058A0B3 /* Translator.xcdatamodeld in Sources */,
 				343954FE25FE11B20058A0B3 /* AppDelegate.swift in Sources */,
-				34B1956425FF60030015D43B /* TranslationCell.swift in Sources */,
+				34D30F65260740EB0014E9EE /* TranslationCell.swift in Sources */,
 				3439550025FE11B20058A0B3 /* SceneDelegate.swift in Sources */,
 				34B1956C25FF625D0015D43B /* TranslatePresenter.swift in Sources */,
 			);
