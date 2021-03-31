@@ -7,48 +7,66 @@
 
 import UIKit
 
-class OtherWordsCell: UITableViewCell {
+protocol CollapsableHeaderDelegate: class {
+    
+    func toggleSection(header: CollapsableHeaderProtocol, section: Int)
+    
+}
+
+protocol CollapsableHeaderProtocol {
+    var delegate: CollapsableHeaderDelegate? { get set }
+}
+class TranslationHeader: UITableViewHeaderFooterView, CollapsableHeaderProtocol {
+    
+    
+    
+    var section: Int = 0
+    
+    weak var delegate: CollapsableHeaderDelegate?
     
     var isExpanded = false {
+        
         didSet {
-            rotateDisclosureLabel(cw: isExpanded)
+            rotateDisclosureLabel(isExpanded: isExpanded)
         }
+        
     }
     var countLabel: UILabel!
     var searchWordLabel: UILabel!
     var translationLabel: UILabel!
     var detailDisclosureLabel: UILabel!
-    weak var delegate: TranslationCellDelegate?
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+   
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         setup()
-        
     }
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        isExpanded = true
-        countLabel.text = nil
-        searchWordLabel.text = nil
-        translationLabel.text = nil
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
   
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reset()
+    }
+    private func reset() {
         
-        if selected {
-            isExpanded.toggle()
-        }
+        isExpanded = true
+        countLabel.text = nil
+        searchWordLabel.text = nil
+        translationLabel.text = nil
         
     }
-    
+   
+  
+        
+
+           
+      
+ 
     private func setup() {
-        self.clipsToBounds = true
-        self.layer.cornerRadius = 18
-        self.layer.masksToBounds = true
+      
+        let tap = UITapGestureRecognizer(target: self, action: #selector(headerTapped(gesure:)))
+        addGestureRecognizer(tap)
         countLabel = UILabel()
         countLabel.translatesAutoresizingMaskIntoConstraints = false
         countLabel.backgroundColor = #colorLiteral(red: 0.8751707026, green: 0.8751707026, blue: 0.8751707026, alpha: 1)
@@ -73,7 +91,7 @@ class OtherWordsCell: UITableViewCell {
         translationLabel.font = UIFont.systemFont(ofSize: 16, weight: .light)
         self.addSubview(translationLabel)
         
-        let stack = UIStackView(arrangedSubviews: [searchWordLabel,translationLabel])
+        let stack = UIStackView(arrangedSubviews: [searchWordLabel, translationLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.alignment = .leading
@@ -83,7 +101,7 @@ class OtherWordsCell: UITableViewCell {
         
         detailDisclosureLabel = UILabel()
         detailDisclosureLabel.translatesAutoresizingMaskIntoConstraints = false
-        detailDisclosureLabel.text = "▷"
+        detailDisclosureLabel.text = "▽"
         detailDisclosureLabel.textColor = .systemBlue
         detailDisclosureLabel.font = UIFont.systemFont(ofSize: 18,weight: .light)
         self.contentView.addSubview(detailDisclosureLabel)
@@ -97,11 +115,19 @@ class OtherWordsCell: UITableViewCell {
     
       
     }
-    
-    private func rotateDisclosureLabel(cw: Bool) {
+    @objc func headerTapped(gesure: UIGestureRecognizer) {
+        isExpanded.toggle()
+        guard let header = gesure.view as? TranslationHeader else {
+                    return
+                }
+        delegate?.toggleSection(header: self, section: header.section)
+     
+        
+    }
+    private func rotateDisclosureLabel(isExpanded: Bool) {
         UIView.animate(withDuration: 0.33) {
-            self.detailDisclosureLabel.transform = cw ?
-                CGAffineTransform(rotationAngle: CGFloat.pi / 2) : CGAffineTransform.identity
+            self.detailDisclosureLabel.transform = isExpanded ?
+                CGAffineTransform(rotationAngle: CGFloat.pi) : CGAffineTransform.identity
         }
         
     }
