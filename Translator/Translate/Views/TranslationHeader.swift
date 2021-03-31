@@ -64,8 +64,9 @@ class TranslationHeader: UITableViewHeaderFooterView, CollapsableHeaderProtocol 
       
  
     private func setup() {
-      
+        contentView.backgroundColor = #colorLiteral(red: 0.9472633644, green: 0.9472633644, blue: 0.9472633644, alpha: 1)
         let tap = UITapGestureRecognizer(target: self, action: #selector(headerTapped(gesure:)))
+        
         addGestureRecognizer(tap)
         countLabel = UILabel()
         countLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -97,8 +98,6 @@ class TranslationHeader: UITableViewHeaderFooterView, CollapsableHeaderProtocol 
         stack.alignment = .leading
         stack.distribution = .fill
         self.contentView.addSubview(stack)
-       
-        
         detailDisclosureLabel = UILabel()
         detailDisclosureLabel.translatesAutoresizingMaskIntoConstraints = false
         detailDisclosureLabel.text = "▽"
@@ -107,7 +106,6 @@ class TranslationHeader: UITableViewHeaderFooterView, CollapsableHeaderProtocol 
         self.contentView.addSubview(detailDisclosureLabel)
             detailDisclosureLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         detailDisclosureLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
-        
         stack.leadingAnchor.constraint(equalTo: countLabel.trailingAnchor, constant: 16).isActive = true
         stack.centerYAnchor.constraint(equalTo: countLabel.centerYAnchor).isActive = true
         stack.trailingAnchor.constraint(equalTo: detailDisclosureLabel.trailingAnchor, constant: -32).isActive = true

@@ -49,7 +49,6 @@ class TranslationCell: UITableViewCell {
     }
     
     private func setup() {
-        backgroundColor = #colorLiteral(red: 0.8751707026, green: 0.8751707026, blue: 0.8751707026, alpha: 1)
         self.clipsToBounds = true
         self.layer.cornerRadius = 18
         self.layer.masksToBounds = true
